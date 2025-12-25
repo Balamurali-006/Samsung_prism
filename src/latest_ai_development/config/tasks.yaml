@@ -1,0 +1,31 @@
+competitor_research_task:
+  description: >
+    Scan competitors related to {topic} and identify any new or recent
+    activities such as product launches, partnerships, funding announcements,
+    marketing campaigns, or major updates.
+    Focus only on information from {current_year}.
+  expected_output: >
+    A concise bullet list of detected competitor activities with source links.
+  agent: competitor_researcher
+
+event_classification_task:
+  description: >
+    Analyze the detected competitor activities and classify each as either
+    "PR_ALERT" or "IGNORE".
+    Respond only with structured classifications and short reasons.
+  expected_output: >
+    A structured list with event name, classification (PR_ALERT or IGNORE),
+    and one-line justification.
+  agent: event_classifier
+
+email_notification_task:
+  description: >
+    For each event classified as PR_ALERT, draft a short internal PR alert email
+    including:
+    - What happened
+    - Why it matters
+    - Competitor name
+    - Source link
+  expected_output: >
+    A concise professional email draft ready to be sent internally.
+  agent: email_notifier
