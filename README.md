@@ -1,47 +1,55 @@
-🚀 Competitor Intelligence System (CrewAI)
+# 🚀 Competitor Intelligence System (CrewAI)
 
-Welcome to the Competitor Intelligence System, a multi-agent AI application built using CrewAI
-.
+Welcome to the **Competitor Intelligence System**, a multi-agent AI application built using **CrewAI**.
+
 This project leverages collaborating AI agents to automatically discover competitors, collect market data, analyze strategies, and generate structured competitive insights for any given company.
 
 The system is designed to simulate a real-world business intelligence workflow, where each agent focuses on a specialized task and collectively produces a comprehensive competitor analysis report.
 
-🧠 Project Overview
+---
+
+## 🧠 Project Overview
 
 This project performs end-to-end competitor intelligence through four core phases:
 
-Discovery Agent – Identifies key competitors of a given company
-
-Collection Agent – Gathers structured data from competitor websites
-
-Strategic Analysis Agent – Performs SWOT-style strategic evaluation
-
-Aggregation Agent – Combines all outputs into a final report
+1. **Discovery Agent** – Identifies key competitors of a given company
+2. **Collection Agent** – Gathers structured data from competitor websites
+3. **Strategic Analysis Agent** – Performs SWOT-style strategic evaluation
+4. **Aggregation Agent** – Combines all outputs into a final report
 
 The output is saved as a structured JSON report, suitable for dashboards, research, or further analysis.
 
-🛠️ Installation
-Prerequisites
+---
 
-Python >= 3.10 and < 3.14
+## 🛠️ Installation
 
-Internet connection (for API calls & scraping)
+### Prerequisites
 
-This project uses UV for dependency management.
+- Python >= 3.10 and < 3.14
+- Internet connection (for API calls & scraping)
+- This project uses **UV** for dependency management.
 
-Install UV
+### Install UV
+
+```bash
 pip install uv
+```
 
-Install Project Dependencies
+### Install Project Dependencies
 
 From the project root directory:
 
+```bash
 crewai install
+```
 
-🔐 Environment Configuration
+---
 
-Create a .env file in the project root and add the following:
+## 🔐 Environment Configuration
 
+Create a `.env` file in the project root and add the following:
+
+```bash
 # Groq (Primary LLM)
 GROQ_API_KEY=your_groq_api_key
 GROQ_MODEL_NAME=llama-3.1-8b-instant
@@ -52,8 +60,13 @@ OPENAI_API_BASE=https://api.openai.com/v1
 
 # CrewAI Tracing (optional)
 CREWAI_TRACING_ENABLED=true
+```
 
-📁 Project Structure
+---
+
+## 📁 Project Structure
+
+```
 latest_ai_development/
 │
 ├── src/latest_ai_development/
@@ -69,76 +82,70 @@ latest_ai_development/
 ├── requirements.txt     # Dependencies
 ├── competitor_report.json
 └── README.md
+```
 
-▶️ Running the Project
+---
+
+## ▶️ Running the Project
 
 To generate competitor intelligence for a company (example: Samsung):
 
+```bash
 python main.py Samsung
+```
 
-📄 Output
+---
+
+## 📄 Output
 
 After execution, the system generates:
 
-Console logs showing agent execution
+- Console logs showing agent execution
+- A structured file: **`competitor_report.json`**
 
-A structured file:
+### Report Includes:
 
-competitor_report.json
+- Identified competitors
+- Features, pricing & offerings
+- Strategic insights:
+  - Strengths
+  - Weaknesses
+  - Opportunities
+  - Threats
 
-Report Includes:
+---
 
-Identified competitors
-
-Features, pricing & offerings
-
-Strategic insights:
-
-Strengths
-
-Weaknesses
-
-Opportunities
-
-Threats
-
-📊 Token Usage & Tracing
+## 📊 Token Usage & Tracing
 
 If tracing is enabled:
 
+```bash
 setx CREWAI_TRACING_ENABLED true   # Windows
-
+```
 
 CrewAI automatically logs:
 
-Agent execution flow
+- Agent execution flow
+- Task-level LLM calls
+- Structured traces via CrewAI dashboard
 
-Task-level LLM calls
+Custom token tracking can be implemented via: `tools/token_counter.py`
 
-Structured traces via CrewAI dashboard
+---
 
-Custom token tracking can be implemented via:
+## 🎯 Why CrewAI?
 
-tools/token_counter.py
+- Modular agent architecture
+- Easy task orchestration
+- LLM-agnostic (Groq, OpenAI, Gemini)
+- Real-world business intelligence simulation
 
-🎯 Why CrewAI?
+---
 
-Modular agent architecture
+## 🧪 Example Use Cases
 
-Easy task orchestration
-
-LLM-agnostic (Groq, OpenAI, Gemini)
-
-Real-world business intelligence simulation
-
-🧪 Example Use Cases
-
-Market research
-
-Startup competitor analysis
-
-Product positioning studies
-
-Academic / internship projects
-
-Business strategy prototyping
+- Market research
+- Startup competitor analysis
+- Product positioning studies
+- Academic / internship projects
+- Business strategy prototyping
