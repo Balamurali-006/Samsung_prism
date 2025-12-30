@@ -1,54 +1,144 @@
-# LatestAiDevelopment Crew
+🚀 Competitor Intelligence System (CrewAI)
 
-Welcome to the LatestAiDevelopment Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
+Welcome to the Competitor Intelligence System, a multi-agent AI application built using CrewAI
+.
+This project leverages collaborating AI agents to automatically discover competitors, collect market data, analyze strategies, and generate structured competitive insights for any given company.
 
-## Installation
+The system is designed to simulate a real-world business intelligence workflow, where each agent focuses on a specialized task and collectively produces a comprehensive competitor analysis report.
 
-Ensure you have Python >=3.10 <3.14 installed on your system. This project uses [UV](https://docs.astral.sh/uv/) for dependency management and package handling, offering a seamless setup and execution experience.
+🧠 Project Overview
 
-First, if you haven't already, install uv:
+This project performs end-to-end competitor intelligence through four core phases:
 
-```bash
+Discovery Agent – Identifies key competitors of a given company
+
+Collection Agent – Gathers structured data from competitor websites
+
+Strategic Analysis Agent – Performs SWOT-style strategic evaluation
+
+Aggregation Agent – Combines all outputs into a final report
+
+The output is saved as a structured JSON report, suitable for dashboards, research, or further analysis.
+
+🛠️ Installation
+Prerequisites
+
+Python >= 3.10 and < 3.14
+
+Internet connection (for API calls & scraping)
+
+This project uses UV for dependency management.
+
+Install UV
 pip install uv
-```
 
-Next, navigate to your project directory and install the dependencies:
+Install Project Dependencies
 
-(Optional) Lock the dependencies and install them by using the CLI command:
-```bash
+From the project root directory:
+
 crewai install
-```
-### Customizing
 
-**Add your `OPENAI_API_KEY` into the `.env` file**
+🔐 Environment Configuration
 
-- Modify `src/latest_ai_development/config/agents.yaml` to define your agents
-- Modify `src/latest_ai_development/config/tasks.yaml` to define your tasks
-- Modify `src/latest_ai_development/crew.py` to add your own logic, tools and specific args
-- Modify `src/latest_ai_development/main.py` to add custom inputs for your agents and tasks
+Create a .env file in the project root and add the following:
 
-## Running the Project
+# Groq (Primary LLM)
+GROQ_API_KEY=your_groq_api_key
+GROQ_MODEL_NAME=llama-3.1-8b-instant
 
-To kickstart your crew of AI agents and begin task execution, run this from the root folder of your project:
+# Optional (fallbacks)
+OPENAI_API_KEY=your_openai_key
+OPENAI_API_BASE=https://api.openai.com/v1
 
-```bash
-$ crewai run
-```
+# CrewAI Tracing (optional)
+CREWAI_TRACING_ENABLED=true
 
-This command initializes the latest-ai-development Crew, assembling the agents and assigning them tasks as defined in your configuration.
+📁 Project Structure
+latest_ai_development/
+│
+├── src/latest_ai_development/
+│   ├── agents/          # Agent definitions
+│   ├── crews/           # Crew orchestration logic
+│   ├── tools/           # Custom tools (scrapers, token counter, search)
+│   ├── schemas/         # JSON output schemas
+│   ├── config/          # Agent & task configuration (YAML)
+│   ├── main.py          # Entry point
+│   └── crew.py          # Crew composition
+│
+├── .env                 # Environment variables
+├── requirements.txt     # Dependencies
+├── competitor_report.json
+└── README.md
 
-This example, unmodified, will run the create a `report.md` file with the output of a research on LLMs in the root folder.
+▶️ Running the Project
 
-## Understanding Your Crew
+To generate competitor intelligence for a company (example: Samsung):
 
-The latest-ai-development Crew is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
+python main.py Samsung
 
-## Support
+📄 Output
 
-For support, questions, or feedback regarding the LatestAiDevelopment Crew or crewAI.
-- Visit our [documentation](https://docs.crewai.com)
-- Reach out to us through our [GitHub repository](https://github.com/joaomdmoura/crewai)
-- [Join our Discord](https://discord.com/invite/X4JWnZnxPb)
-- [Chat with our docs](https://chatg.pt/DWjSBZn)
+After execution, the system generates:
 
-Let's create wonders together with the power and simplicity of crewAI.
+Console logs showing agent execution
+
+A structured file:
+
+competitor_report.json
+
+Report Includes:
+
+Identified competitors
+
+Features, pricing & offerings
+
+Strategic insights:
+
+Strengths
+
+Weaknesses
+
+Opportunities
+
+Threats
+
+📊 Token Usage & Tracing
+
+If tracing is enabled:
+
+setx CREWAI_TRACING_ENABLED true   # Windows
+
+
+CrewAI automatically logs:
+
+Agent execution flow
+
+Task-level LLM calls
+
+Structured traces via CrewAI dashboard
+
+Custom token tracking can be implemented via:
+
+tools/token_counter.py
+
+🎯 Why CrewAI?
+
+Modular agent architecture
+
+Easy task orchestration
+
+LLM-agnostic (Groq, OpenAI, Gemini)
+
+Real-world business intelligence simulation
+
+🧪 Example Use Cases
+
+Market research
+
+Startup competitor analysis
+
+Product positioning studies
+
+Academic / internship projects
+
+Business strategy prototyping

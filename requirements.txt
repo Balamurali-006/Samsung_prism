@@ -1,0 +1,26 @@
+# Core
+python-dotenv>=1.0.0
+
+# CrewAI framework
+crewai>=0.28.0
+
+# LLM Providers / SDKs
+openai>=1.30.0
+tiktoken>=0.7.0
+
+# Web scraping & data collection
+requests>=2.31.0
+beautifulsoup4>=4.12.3
+lxml>=5.2.1
+
+# Search & crawling tools
+tavily-python>=0.3.3
+serpapi>=0.1.5
+
+# Utilities
+pydantic>=2.7.0
+rich>=13.7.0
+tqdm>=4.66.0
+
+# Optional (for structured output & debugging)
+jsonschema>=4.22.0
